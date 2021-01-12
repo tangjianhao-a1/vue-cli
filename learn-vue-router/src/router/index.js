@@ -7,6 +7,8 @@ import Home from '../components/Home'
 
 import About from '../components/About'
 
+import User from '../components/User'
+
 //1.通过Vue.use(插件)，安装插件    
 
 Vue.use(VueRouter)
@@ -21,9 +23,15 @@ const routes = [
     path: '/home',
     component: Home
   },
+
   {
     path: '/about',
     component: About
+  },
+
+  {
+    path: '/user/:abc',  
+    component: User
   }
 ]
 
