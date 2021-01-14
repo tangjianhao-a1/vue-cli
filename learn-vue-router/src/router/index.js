@@ -14,7 +14,8 @@ const Home = () => import('../components/Home')
 const About = () => import('../components/About')    
 const User = () => import('../components/User')  
 const HomeNews = () => import('../components/HomeNews')
-const HomeMessage = () => import('../components/HomeMessage')
+const HomeMessage = () => import('../components/HomeMessage')  
+const profile = () => import('../components/Profile')
 Vue.use(VueRouter)
 
 const routes = [
@@ -48,8 +49,13 @@ const routes = [
   },
 
   {
-    path: '/user/:abc',  
+    path: '/user/:id',  
     component: User
+  },
+
+  {
+    path: '/profile',  
+    component: profile
   }
 ]
 
