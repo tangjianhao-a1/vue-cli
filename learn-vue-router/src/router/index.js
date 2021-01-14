@@ -12,8 +12,9 @@ import Vue from 'vue'
 //1.通过Vue.use(插件)，安装插件    
 const Home = () => import('../components/Home')   
 const About = () => import('../components/About')    
-const User = () => import('../components/User')
-
+const User = () => import('../components/User')  
+const HomeNews = () => import('../components/HomeNews')
+const HomeMessage = () => import('../components/HomeMessage')
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,7 +25,21 @@ const routes = [
 
   {
     path: '/home',
-    component: Home
+    component: Home,  
+    children: [
+      {
+        path: '',  
+        redirect: 'news'
+      },
+      {
+        path: 'news',  
+        component: HomeNews
+      },
+      {
+        path: 'message',  
+        component: HomeMessage
+      }
+    ]
   },
 
   {
