@@ -18,14 +18,9 @@ export default {
       message: '你好啊'
     }
   },  
-  created() {
-    console.log('出生');
-  },  
-  destroyed() {
-    console.log('消亡');
-  },
+ 
   activated() {
-    this.$router.push(this.path);
+    this.$router.push(this.path)
   },  
   beforeRouteLeave(to,from,next) {
     this.path = this.$route.path; 

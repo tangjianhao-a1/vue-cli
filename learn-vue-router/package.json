@@ -5,13 +5,13 @@
   "author": "ede <837221025@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 192.168.101.140",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

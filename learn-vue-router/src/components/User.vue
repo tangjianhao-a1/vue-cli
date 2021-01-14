@@ -16,7 +16,13 @@ export default {
     userId() {
       return this.$route.params.id
     }
+  }, 
+   created() {
+    console.log('User created');
   },  
+  destroyed() {
+    console.log('User destroyed');
+  },
   methods: {
     btnClick() {
       console.log(this.$router);

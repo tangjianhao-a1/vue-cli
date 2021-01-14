@@ -4,7 +4,7 @@
   <router-link to="/about" tag="button">关于</router-link>  
   <router-link :to="'/user/'+userId" tag="button">用户</router-link>    
   <router-link :to="{path: '/profile',query:{name:'why',age:18,height:1.88}}" tag="button">档案</router-link>    
-  <keep-alive>
+  <keep-alive exclude="Profile,User">
     <router-view></router-view>
   </keep-alive>
   </div>
