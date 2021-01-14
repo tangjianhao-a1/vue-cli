@@ -26,7 +26,10 @@ const routes = [
 
   {
     path: '/home',
-    component: Home,  
+    component: Home, 
+    meta: {
+      title: '首页'
+    }, 
     children: [
       {
         path: '',  
@@ -45,17 +48,26 @@ const routes = [
 
   {
     path: '/about',
-    component: About
+    component: About,  
+    meta: {
+      title: '关于'
+    }
   },
 
   {
     path: '/user/:id',  
-    component: User
+    component: User,  
+    meta: {
+      title: '用户'
+    }
   },
 
   {
     path: '/profile',  
-    component: profile
+    component: profile,
+    meta: {
+      title: '档案'
+    }
   }
 ]
 
@@ -66,6 +78,12 @@ const router = new VueRouter({
   routes,  
   mode: 'history',  
   linkActiveClass: 'active'
+})
+
+router.beforeEach((to,from,next) => {
+  //从from跳转到to
+ document.title = to.matched[0].meta.title
+  next()
 })
 
 //3.将router对象传入到vue实例  
