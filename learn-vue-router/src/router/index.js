@@ -22,7 +22,7 @@ const routes = [
   { //redirect重定向
     path: '/',  
     redirect: '/home'
-  },
+  }, 
 
   {
     path: '/home',

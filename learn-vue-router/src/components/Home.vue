@@ -11,7 +11,8 @@
 
 <script>
 export default {
-  name: "Home",  
+  name: "Home",   
+  path: '/home/news',
   data() {
     return {
       message: '你好啊'
@@ -22,6 +23,13 @@ export default {
   },  
   destroyed() {
     console.log('消亡');
+  },
+  activated() {
+    this.$router.push(this.path);
+  },  
+  beforeRouteLeave(to,from,next) {
+    this.path = this.$route.path; 
+    next()
   }
 }
 </script>
