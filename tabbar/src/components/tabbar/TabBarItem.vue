@@ -8,32 +8,32 @@
 
 <script>
 export default {
-  name: "TabBarItem",  
+  name: "TabBarItem",
   props: {
-    path: String,   
+    path: String,
     activeColor: {
-      type: String,  
-      default: 'red'
-    }
+      type: String,
+      default: "red",
+    },
   },
   data() {
     return {
-     // isActive: true,  
-    }
+      // isActive: true,
+    };
   },
   computed: {
     isActive() {
       return this.$route.path.indexOf(this.path) != -1;
     },
     activeStyle() {
-      return this.isActive ? {color: this.activeColor} : {}
-    }
+      return this.isActive ? { color: this.activeColor } : {};
+    },
   },
   methods: {
     itemClick() {
-      this.$router.replace(this.path).catch(err => {})
-    }
-  }
+      this.$router.replace(this.path).catch((err) => {});
+    },
+  },
 };
 </script>
 
@@ -51,6 +51,4 @@ export default {
   vertical-align: middle;
   margin-bottom: 2px;
 }
-
-
 </style>
