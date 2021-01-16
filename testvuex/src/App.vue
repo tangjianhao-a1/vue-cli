@@ -9,7 +9,8 @@
    <h2>----------------------App内容：getter相关信息-----------------------------------------</h2>  
    <h2>{{$store.getters.powerCounter}}</h2>  
    <h2>{{$store.getters.more20stu}}</h2>  
-   <h2>{{$store.getters.more20stulength}}</h2>
+   <h2>{{$store.getters.more20stulength}}</h2>  
+   <h2>{{$store.getters.moreAgeStu(25)}}</h2>
 
    <h2>------------------------ Hello vue内容-----------------------------------------</h2>
    <hello-vuex></hello-vuex>

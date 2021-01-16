@@ -34,6 +34,12 @@ const store = new Vuex.Store({
     },
     more20stulength(state,gettrs) {
       return gettrs.more20stu.length
+    },  
+    moreAgeStu(state) {
+     /*  return function(age) {
+        return state.students.filter(s => s.age > age)
+      } */
+      return age => state.students.filter(item => item.age > age)
     }
   },  
 
