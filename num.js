@@ -247,4 +247,19 @@ console.log(nine());
   }).then(item => {console.log(item);})
 }
 
-
+{
+  function test() {
+   let a = new Promise((resolve,reject) => {
+      setTimeout(() => {
+       // resolve(1);  
+        reject('err')
+      },3000)
+    }).then(item => {
+      return item + 1
+    }).then(item => {
+      return item + 1
+    })  
+   return a
+  }  
+  test().then(item => console.log(item)).catch(item => console.log(item))
+}
