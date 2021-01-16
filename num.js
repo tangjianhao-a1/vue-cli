@@ -262,4 +262,42 @@ console.log(nine());
    return a
   }  
   test().then(item => console.log(item)).catch(item => console.log(item))
+}  
+
+{
+  let str1 = 'adafaaaaadfrfa';   
+  let index = str1.indexOf('a'); 
+  let num = 0; 
+  while(index !== -1) {
+    console.log(index);
+    num++;  
+    index = str1.indexOf('a',index + 1)
+  }  
+  console.log('a出现的次数为' + num);
+}
+
+{
+  let arr = ['a','c','a','b','d','a'];  
+  let index = arr.indexOf('a');  
+  let num = 0;  
+  while(index !== -1) {
+      console.log(index);  
+      num++;  
+      index = arr.indexOf('a',index + 1)
+  } 
+  console.log('a出现的次数为:'+ num);
+}  
+
+{
+  function test(str) {
+    let index = str.indexOf('a');  
+    let num = 0;  
+    while(index !== -1) {
+     num++;  
+     index = str.indexOf('a',index + 1);  
+    }
+    return `aaaa出现的次数为${num}`
+  }   
+  let a = test('aadadadada');  
+  console.log(a);
 }
