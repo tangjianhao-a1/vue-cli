@@ -1,8 +1,8 @@
 <template>
   <tab-bar>
     <tab-bar-item path="/home">
-      <img slot="item-icon" src="../assets/img/tabbar/homes.png" alt="" />
-      <img slot="item-icon-active" src="../assets/img/tabbar/home.png" alt="" />
+      <img slot="item-icon" src="~assets/img/tabbar/homes.png" alt="" />
+      <img slot="item-icon-active" src="~assets/img/tabbar/home.png" alt="" />
       <div slot="item-text">首页</div>
     </tab-bar-item>
     <tab-bar-item path="/category" activeColor="blue">
