@@ -3,7 +3,37 @@ import Vuex from 'vuex'
 import {INCREMENT} from './mutations-types'
 //1.安装插件
 Vue.use(Vuex)    
-//2.创建对象   
+//2.创建对象  
+const moduleA = {
+  state: {
+    name: 'zhangsan'
+  },  
+  mutations: {
+    updateName(state,payload) {
+      state.name = payload
+    }
+  },  
+  actions: {
+    aUpdateName(context) {  
+      console.log(context);
+     setTimeout(()=>{
+      context.commit('updateName','wangwu')
+     },1000)
+    }
+  },  
+  getters: {
+    fullname(state) {
+      return state.name + '11111'
+    },  
+    fullname2(state,getters) {
+      return getters.fullname + '2222'
+    }, 
+    fullname3(state,getters,rootstate) {
+      return getters.fullname2 + rootstate.counter
+    }
+  }
+}
+
 const store = new Vuex.Store({
   state: {
     counter: 1000,
@@ -76,7 +106,7 @@ const store = new Vuex.Store({
   },  
 
   modules: {
-
+    a:moduleA
   }
 })  
 

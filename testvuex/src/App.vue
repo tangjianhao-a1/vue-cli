@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-     <h2>------------------action内容--------------------</h2>  
-    <h2>{{$store.state.info}}</h2>  
+    <h2>-----------------App内容：module中的内容---------------------</h2>
+    <h2>{{ $store.state.a.name }}</h2>
+    <button @click="updateName">修改名字</button>  
+    <h2>{{$store.getters.fullname}}</h2>
+     <h2>{{$store.getters.fullname2}}</h2>
+      <h2>{{$store.getters.fullname3}}</h2>  
+      <button @click="asyncUpdateName">异步修改名字</button>
+
+    <h2>------------------App内容：action内容--------------------</h2>
+    <h2>{{ $store.state.info }}</h2>
     <button @click="updateInfo">修改信息</button>
 
     <h2>----------------------App内容--------------------------------</h2>
@@ -20,7 +28,7 @@
     <h2>{{ $store.getters.more20stu }}</h2>
     <h2>{{ $store.getters.more20stulength }}</h2>
     <h2>{{ $store.getters.moreAgeStu(25) }}</h2>
-   
+
     <h2>
       ------------------------ Hello
       vue内容-----------------------------------------
@@ -30,8 +38,8 @@
 </template>
 
 <script>
-import HelloVuex from "./components/HelloVuex"  
-import {INCREMENT} from './store/mutations-types'
+import HelloVuex from "./components/HelloVuex";
+import { INCREMENT } from "./store/mutations-types";
 export default {
   name: "App",
   data() {
@@ -60,7 +68,7 @@ export default {
       //2.特殊的提交封装
       this.$store.commit({
         type: "incremenCont",
-        count
+        count,
       });
     },
     addStudent() {
@@ -69,19 +77,28 @@ export default {
     },
     updateInfo() {
       //this.$store.commit("updateInfo")
-    /*   this.$store.dispatch('aUpdateInfo',{
+      /*   this.$store.dispatch('aUpdateInfo',{
         payload: '我是携带的信息',  
         success: () => {
           console.log('里面已经完成了');
         }
       }) */
-      this.$store.dispatch('aUpdateInfo','我是信息')
-      .then(res => {
-        console.log('里面完成了提交')  
+      this.$store.dispatch("aUpdateInfo", "我是信息").then((res) => {
+        console.log("里面完成了提交");
         console.log(res);
-      })
+      });
+    },
+
+    updateName() {
+      this.$store.commit('updateName','lisi')
+    },
+
+    asyncUpdateName() {
+      this.$store.dispatch('aUpdateName')
     }
   },
+
+
   components: {
     HelloVuex,
   },
