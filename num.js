@@ -300,4 +300,16 @@ console.log(nine());
   }   
   let a = test('aadadadada');  
   console.log(a);
+}   
+
+{
+  let arr = [1,2,3];  
+  function test(num1,num2) {
+    return function() {
+      return num1 + num2
+    }
+  }  
+
+  let a = test(1,2);  
+  console.log(a);
 }
